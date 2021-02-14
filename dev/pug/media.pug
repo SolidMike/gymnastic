@@ -1,0 +1,180 @@
+extends template/main
+
+block variables
+    - var title = 'Фото и видео'
+    - var pageClass = 'media-page'
+
+block content
+    -
+        const media = [
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'ВС "Юные гимнастки" 20-27.09.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Этап Гран-при в Москве 07-09.02.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'ВС "Надежды России" 28.09 - 06.10.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'ВС "Юные гимнастки" 20-27.09.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Этап Гран-при в Москве 07-09.02.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'ВС "Надежды России" 28.09 - 06.10.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'ВС "Юные гимнастки" 20-27.09.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Этап Гран-при в Москве 07-09.02.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'ВС "Надежды России" 28.09 - 06.10.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'ВС "Юные гимнастки" 20-27.09.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Этап Гран-при в Москве 07-09.02.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded card--border--wide',
+                innerMod: 'media-card__inner--gutter--large',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'ВС "Надежды России" 28.09 - 06.10.2020',
+                description: '',
+                link: './album.html',
+                linkLabel: 'Просмотреть...',
+                content: ''
+            },
+        ]
+
+    section.section.media
+        .bg-img.bg-img--media--right
+        .bg-img.bg-img--media--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Фото и видео')
+            .section__title Фото и видео
+            ul.grid
+                each obj in media
+                    li.grid__item
+                        +mediaCard(obj)
+            include ./modules/pagination/pagination

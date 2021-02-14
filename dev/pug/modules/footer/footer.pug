@@ -1,0 +1,71 @@
+footer.footer
+    .footer__body.container
+        figure.logo.footer__logo.logo--view--footer
+            a(href="/").logo__link
+                picture.logo__img
+                    source(srcset='./static/images/general/logo.webp' type='image/webp').js-webp-img
+                    source(srcset='./static/images/general/logo.png' type='image/png')
+                    img(src='./static/images/general/logo.png' alt='Logo' loading="lazy")
+            figcaption.logo__text Федерация Художественной Гимнастики ДНР
+        .footer__navigation
+            -
+                var data = {
+                    "title": "Title text",
+                    "items": [
+                        {
+                        "title": "Главная",
+                        "link": '/'
+                        },
+                        {
+                            "title": "О федерации",
+                            "link": './about.html',
+                        },
+                        {
+                            "title": "Звезды",
+                            "link": "./stars.html",
+                        },
+                        {
+                            'title': 'Соревнования',
+                            'link': './ads.html',
+                        },
+                        {
+                            'title': 'Фото и видео',
+                            'link': './media.html',
+                        },
+                        {
+                            'title': 'Коллегам',
+                            'link': './courses.html',
+                        },
+                        {
+                            'title': 'Школы',
+                            'link': './schools.html',
+                        }
+                    ]
+                }
+            nav.menu.menu--view--footer
+                +menu(data, 1)
+        .footer__contacts
+            .contacts.contacts--view--footer
+                ul.contacts__info
+                    li.contacts__item
+                        .contacts__icon
+                            +icon('phone')
+                        a(href="tel:0713330007").contacts__text.contacts__link (071)-333-0007
+                    li.contacts__item
+                        .contacts__icon
+                            +icon('envelope')
+                        a(href="mailto:fhg-dnr@mail.ua").contacts__text.contacts__link fhg-dnr@mail.ua
+                    li.contacts__item
+                        .contacts__icon
+                            +icon('marker')
+                        .contacts__text Донецк ул. Марьинская, д.1
+                    li.contacts__item
+                        .contacts__icon
+                            +icon('marker')
+                        .contacts__text ул.Артема 147, СК "Локомотив" #[br]
+                            span зал для художественной гимнастики
+        .socials.socials--view--footer.footer__socials
+            .socials__title Подпишитесь на нас
+            ul.socials__list
+                +socialLink('inst', 'https://www.instagram.com/')
+                +socialLink('vk', 'https://vk.com/')

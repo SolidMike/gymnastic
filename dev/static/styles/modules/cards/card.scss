@@ -1,0 +1,203 @@
+.card {
+    box-shadow: 0 16px 72px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    background-color: $white;
+    height: 100%;
+    display: flex;
+
+    &--border--rounded {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    &--border--wide {
+        border: 4px solid $white;
+    }
+
+    &--size--small {
+        max-width: rem(270px);
+    }
+
+    &--size--large {
+        max-height: 31.25rem;
+        max-width: rem(370px);
+    }
+
+    &--view--column {
+        @include screen(700px) {
+            flex-direction: column;
+        }
+    }
+
+    &--has--logo {
+        position: relative;
+
+        &::after {
+            content: '';
+            background-image: url("../images/general/card-logo.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom right;
+            width: calc(4rem + 2vw);
+            height: calc(4rem + 1.5vw);
+            max-width: rem(118px);
+            max-height: rem(83px);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__date {
+        color: $red;
+        font-family: $bold;
+    }
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, 20px, 24px);
+        font-family:  $bold;
+
+        &--has--underline {
+            padding-bottom: calc(0.5rem + 0.3vw);
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: #fd2e48;
+                height: 2px;
+                width: 75px;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        &--size--small {
+            @include fluid-type($min-vw, $max-vw, 14px, 16px);
+        }
+    }
+
+    &__icon {
+        font-size: 1.3rem;
+        color: $red;
+        margin-right: 0.8rem;
+    }
+
+    &__link {
+        display: contents;
+    }
+
+    &__picture {
+        display: block;
+        height: rem(200px);
+        width: 100%;
+
+        .card--size--large & {
+            height: 100%;
+        }
+
+        .card--view--slider & {
+            height: inherit;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: inherit;
+
+        .card--view--slider & {
+            object-fit: scale-down;
+        }
+    }
+
+    &__inner {
+        height: 100%;
+        position: relative;
+        flex: auto;
+
+        &:hover .card__overlay {
+            opacity: 1;
+        }
+
+        &--gutter--large {
+            padding: calc(1.2rem + 0.5vw) calc(1.8rem + 1vw);
+        }
+
+        &--gutter--huge {
+            padding: calc(1.2rem + 1.5vw) calc(1.8rem + 1.2vw);
+
+            > *:not(:first-child) {
+                margin-top: calc(0.5rem + 1.2vw);
+                line-height: 1.6;
+            }
+        }
+
+        &--col--third {
+            width: 33.33%;
+
+            @include screen(700px) {
+                width: 100%;
+            }
+        }
+
+        &--has--line-right {
+
+            &:not(:last-child) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: $red;
+                    height: 83px;
+                    width: 2px;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include screen(700px) {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__position {
+        font-size: rem(14px);
+        color: #8C8C8C;
+        margin-top: calc(0.5rem + 0.3vw);
+    }
+
+    &__content {
+        margin-top: calc(0.5rem + 0.3vw);
+    }
+
+    &__overlay {
+        @include flex-center;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.62);
+        color: $white;
+        transition: .3s ease-in-out;
+        opacity: 0;
+
+        .icon-zoom-img {
+            font-size: 1.5rem;
+        }
+
+        &--video {
+            span {
+                @include cover-background;
+                display: inherit;
+                padding: 1rem;
+                border-radius: 50%;
+                background-image: linear-gradient(102.88deg, #D64745 27.66%, #FF605E 71.39%);
+            }
+        }
+    }
+}

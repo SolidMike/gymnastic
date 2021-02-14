@@ -1,0 +1,44 @@
+// Buttons
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
+    color: $white;
+    font-family: $bold;
+    padding: 1.4rem 1rem;
+    border-radius: rem(40px);
+    background: $btn-gradient;
+    width: rem(256px);
+    text-align: center;
+    border: none;
+
+    &--size--small {
+        width: rem(130px);
+        padding: 0.8rem;
+        font-size: rem(14px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:hover,
+    &:focus {
+        filter: brightness(1.1);
+    }
+
+    &--round {
+        padding: 0.8rem;
+        border-radius: 50%;
+        width: initial;
+        height: initial;
+        min-width: initial;
+    }
+
+    &--disabled {
+        filter: grayscale(1);
+        opacity: 0.2;
+        pointer-events: none;
+    }
+}

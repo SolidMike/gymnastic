@@ -1,0 +1,150 @@
+.parallax {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    &--front {
+        z-index: 10;
+    }
+
+    &--back {
+        z-index: 5;
+    }
+
+    &__ball {
+        .parallax--view--ads & {
+            @include webp-bg-image('../images/general/ball', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 20vw;
+            height: 20vw;
+            position: absolute !important;
+            right: 10% !important;
+            top: 60% !important;
+            left: auto!important;
+        }
+
+        .parallax--view--homepage-news & {
+            @include webp-bg-image('../images/general/ball', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 20vw;
+            height: 20vw;
+            position: absolute !important;
+            left: -10% !important;
+        }
+
+        .parallax--view--stars & {
+            @include webp-bg-image('../images/general/ball', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 20vw;
+            height: 20vw;
+            position: absolute !important;
+            left: -10% !important;
+            top: 45%!important;
+        }
+    }
+
+    &__ribbon {
+        .parallax--view--ads & {
+            @include webp-bg-image('../images/general/purple-ribbon', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 35vw;
+            height: 25vw;
+            position: absolute !important;
+            left: 0!important;
+            top: 0!important;
+        }
+
+        .parallax--view--homepage-news & {
+            @include webp-bg-image('../images/general/purple-ribbon', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50vw;
+            height: 25vw;
+            position: absolute !important;
+            right: 0;
+            bottom: 20%;
+            left: auto!important;
+            top: auto!important;
+        }
+
+        .parallax--view--hero & {
+            @include webp-bg-image('../images/general/hero-ribbon', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 56vw;
+            height: 25vw;
+            right: -2%;
+            bottom: -10%;
+            left: auto!important;
+            top: auto!important;
+        }
+
+        .parallax--view--stars & {
+            @include webp-bg-image('../images/general/purple-ribbon', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50vw;
+            height: 25vw;
+            position: absolute !important;
+            right: 0;
+            left: auto!important;
+            top: 20%!important;
+        }
+    }
+
+    &__girl {
+        .parallax--view--hero & {
+            @include webp-bg-image('../images/general/hero-girl', 'png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50vw;
+            height: 25vw;
+            right: 15%;
+            bottom: 35%;
+            position: absolute!important;
+            left: auto!important;
+            top: auto!important;
+        }
+    }
+
+    &__red-particles {
+        @include webp-bg-image('../images/general/red-particles', 'png');
+        @include cover-background;
+        width: 80vw;
+        height: 90%;
+        right: 0;
+        left: auto!important;
+        top: 0!important;
+        position: absolute!important;
+    }
+
+    &__purple-particles {
+        @include webp-bg-image('../images/general/purple-particles', 'png');
+        @include cover-background;
+        width: 80vw;
+        height: 90%;
+        right: 0;
+        bottom: 0;
+        left: auto!important;
+        top: 0!important;
+    }
+
+    @include screen(700px) {
+        display: none;
+    }
+}

@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    - var title = 'Школы'
+    - var pageClass = 'schools-page'
+
+block content
+    section.section.schools
+        .bg-img.bg-img--schools--right
+        .bg-img.bg-img--schools--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Школы')
+            .section__title Школы
+            ul.grid.grid--col--full
+                - for (let i = 0; i < 5; i++)
+                    li.grid__item
+                        article.card.card--border--rounded.card--has--logo.card--view--column
+                            .card__inner.card__inner--gutter--large.card__inner--col--third.card__inner--has--line-right
+                                .card__title
+                                    span.card__icon
+                                        +icon('marker')
+                                    span Адрес:
+                                .card__content.text.text--responsive г. Горлока, БК “Ринг” #[br] пр. Ленина, 24 (ПТУ № 109)
+                            .card__inner.card__inner--gutter--large.card__inner--col--third.card__inner--has--line-right
+                                .card__title
+                                    span.card__icon
+                                        +icon('time')
+                                    span Время работы:
+                                .card__content.text.text--responsive ежедневно #[br] с 14.00 до 18.00
+                            .card__inner.card__inner--gutter--large.card__inner--col--third.card__inner--has--line-right
+                                .card__title
+                                    span.card__icon
+                                        +icon('phone')
+                                    span Телефон:
+                                .card__content.text.text--responsive (071) 327-56-16 #[br] Бабанов Олег Витальевич

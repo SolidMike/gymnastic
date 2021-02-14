@@ -1,0 +1,17 @@
+.contact-us {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: rem(30px);
+
+        @include screen(700px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__map {
+        max-width: initial;
+        margin: initial;
+        height: 400px;
+    }
+}

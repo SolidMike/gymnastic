@@ -1,0 +1,46 @@
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom-color: transparent;
+    border-radius: 4px;
+    color: $black;
+
+    &__item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    &__heading {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        padding: 16px;
+        background-color: #0C1D58;
+        color: #eee;
+
+        &.is-active {
+            + .accordion__inner {
+                max-height: 50em;
+                border-top: 1px solid rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    &__icon {
+        margin-right: 12px;
+    }
+
+    &__title {
+        flex: 1;
+    }
+
+    &__inner {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.8s;
+    }
+
+    &__content {
+        padding: 16px;
+        background-color: #eee;
+        color: #000;
+    }
+}

@@ -1,0 +1,213 @@
+extends template/main
+
+block variables
+    - var title = 'Главная страница'
+    - var pageClass = 'home-page'
+
+block content
+    -
+        const news = [
+                {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'Подведение итогов 2020 года',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Чемпионта переходное первенство ДНР',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'Федерация гимнастики чемпионат',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'Подведение итогов 2020 года',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Чемпионта переходное первенство ДНР',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'Федерация гимнастики чемпионат',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+        ]
+
+        const gallery = [
+            {
+                img: './static/images/content/homepage-gallery-1.jpg',
+                imgWebp: './static/images/content/homepage-gallery-1.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-2.jpg',
+                imgWebp: './static/images/content/homepage-gallery-2.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-3.jpg',
+                imgWebp: './static/images/content/homepage-gallery-3.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-4.jpg',
+                imgWebp: './static/images/content/homepage-gallery-4.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-5.jpg',
+                imgWebp: './static/images/content/homepage-gallery-5.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-6.jpg',
+                imgWebp: './static/images/content/homepage-gallery-6.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-7.jpg',
+                imgWebp: './static/images/content/homepage-gallery-7.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-8.jpg',
+                imgWebp: './static/images/content/homepage-gallery-8.webp',
+            },
+        ]
+        const partners = [
+            {
+                img: './static/images/content/partners/partner-phoenix.png',
+                imgWebp: './static/images/content/partners/partner-phoenix.webp',
+            },
+            {
+                img: './static/images/content/partners/partner-galaxy.png',
+                imgWebp: './static/images/content/partners/partner-galaxy.webp',
+            },
+            {
+                img: './static/images/content/partners/partner-interdon.png',
+                imgWebp: './static/images/content/partners/partner-interdon.webp',
+            },
+            {
+                img: './static/images/content/partners/partner-donko.png',
+                imgWebp: './static/images/content/partners/partner-donko.webp',
+            },
+            {
+                img: './static/images/content/partners/partner-mastertorg.png',
+                imgWebp: './static/images/content/partners/partner-mastertorg.webp',
+            },
+            {
+                img: './static/images/content/partners/partner-makinvest.png',
+                imgWebp: './static/images/content/partners/partner-makinvest.webp',
+            },
+        ]
+    section.section.hero
+        .parallax.parallax--view--hero.parallax--front
+            .parallax__girl(data-depth="0.1")
+            .parallax__ribbon(data-depth="0.3")
+        .parallax.parallax--view--hero.parallax--back
+            .parallax__red-particles(data-depth="0.2")
+            .parallax__purple-particles(data-depth="0.2")
+        .container.text.text--color--white
+            .hero__title
+                p Вчера - #[strong Мечта],
+                p Сегодня - #[strong Цель],
+                p Завтра - #[strong Реальность]!!!
+            .hero__description Федерация художественной гимнастики #[br] Донецкой Народной Республики
+    section.section.homepage-news
+        .parallax.parallax--view--homepage-news
+            .parallax__ball(data-depth="0.2")
+            .parallax__ribbon(data-depth="0.2")
+        .bg-img.bg-img--homepage--right
+        .bg-img.bg-img--homepage--left
+        .container
+            .section__title Новости
+            ul.grid
+                each obj in news
+                    li.grid__item
+                        +mediaCard(obj)
+            .btns-wrapp
+                +btn({label: 'Перейти к новостям', href: './news.html'})
+    section.section.homepage-gallery
+        .container
+            .section__title.text.text--color--white Галерея Федерации #[br] художественной гимнастики
+            ul.grid.grid--col--quarter
+                each obj in gallery
+                    li.grid__item
+                        article.card.card--border--rounded.card--border--wide.card--size--small
+                            a.card__link(href= obj.img data-fancybox="gallery")
+                                figure.card__inner
+                                    picture.card__picture
+                                        source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                                        source(srcset= obj.img type='image/png').js-fallback-img
+                                        img.card__img(src= obj.img alt= obj.title loading="lazy")
+                                    figcaption.card__overlay
+                                        +icon('zoom-img')
+            .btns-wrapp
+                +btn({label: 'Посмотреть еще', href: './media.html'})
+    section.section.partners
+        .bg-img.bg-img--partners--right
+        .container
+            .section__title Наши партнеры
+            .slider
+                .swiper-container
+                    .swiper-wrapper
+                        each obj in partners
+                            .swiper-slide
+                                article.card.card--border--rounded.card--view--slider
+                                    a.card__link(href= obj.img data-fancybox="gallery")
+                                        picture.card__picture.slider__picture
+                                            source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                                            source(srcset= obj.img type='image/png').js-fallback-img
+                                            img.card__img(src= obj.img alt= obj.title loading="lazy")
+                .swiper-button-prev.btn.btn--round.js-brands-slider-btn-prev
+                    +icon('prev-arrow')
+                .swiper-button-next.btn.btn--round.js-brands-slider-btn-next
+                    +icon('next-arrow')
+                    

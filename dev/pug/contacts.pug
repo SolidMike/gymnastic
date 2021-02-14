@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    - var title = 'Контакты'
+    - var pageClass = 'contacts-page'
+
+block content
+    section.section.contact-us
+        .bg-img.bg-img--contact-us--right
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Контакты')
+            .section__title Контакты
+            .contact-us__grid
+                .contact-us__contacts
+                    .contacts.contacts--view--contact-us
+                        ul.contacts__info
+                            li.contacts__item
+                                .contacts__subtitle Адрес:
+                                .contacts__text Донецк ул. Марьинская, д.1
+                            li.contacts__item
+                                .contacts__subtitle Зал для художественной гимнастики:
+                                .contacts__text ул.Артема 147, СК "Локомотив"
+                            li.contacts__item
+                                .contacts__subtitle Телефон:
+                                a(href="tel:0713330007").contacts__text.contacts__link (071)-333-0007
+                            li.contacts__item
+                                .contacts__subtitle Почта:
+                                a(href="mailto:fhg-dnr@mail.ua").contacts__text.contacts__link fhg-dnr@mail.ua
+                    .socials.socials--view--contact-us
+                        .socials__title Мы в соц. сетях:
+                        ul.socials__list
+                            +socialLink('inst', 'https://www.instagram.com/')
+                            +socialLink('vk', 'https://vk.com/')
+                .contact-us__map.card.card--border--rounded.card--border--wide
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae83d106d5a3cfdafd0052cec4eda961e0995e9f63029edb36e52370177206236&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>

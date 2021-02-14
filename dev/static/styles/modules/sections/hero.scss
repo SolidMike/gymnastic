@@ -1,0 +1,26 @@
+.hero {
+    @include webp-bg-image('../images/general/hero-bg', 'jpg');
+    @include cover-background;
+    height: 80vmin;
+
+    &::before {
+        @include cover-background;
+        background-position: top;
+        content: '';
+        background-image: url("../images/general/hero-wave.svg");
+        height: 12vmin;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        z-index: 10;
+    }
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, 20px, 60px);
+        margin-bottom: 1em;
+    }
+
+    &__description {
+        @include fluid-type($min-vw, $max-vw, 14px, 18px);
+    }
+}

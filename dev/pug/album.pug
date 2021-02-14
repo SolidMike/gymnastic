@@ -1,0 +1,114 @@
+extends template/main
+
+block variables
+    - var title = 'Альбом'
+    - var pageClass = 'album-page'
+
+block content
+    -
+        const gallery = [
+            {
+                img: './static/images/content/homepage-gallery-1.jpg',
+                imgWebp: './static/images/content/homepage-gallery-1.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-2.jpg',
+                imgWebp: './static/images/content/homepage-gallery-2.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-3.jpg',
+                imgWebp: './static/images/content/homepage-gallery-3.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-4.jpg',
+                imgWebp: './static/images/content/homepage-gallery-4.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-5.jpg',
+                imgWebp: './static/images/content/homepage-gallery-5.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-6.jpg',
+                imgWebp: './static/images/content/homepage-gallery-6.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-7.jpg',
+                imgWebp: './static/images/content/homepage-gallery-7.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-8.jpg',
+                imgWebp: './static/images/content/homepage-gallery-8.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-1.jpg',
+                imgWebp: './static/images/content/homepage-gallery-1.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-2.jpg',
+                imgWebp: './static/images/content/homepage-gallery-2.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-3.jpg',
+                imgWebp: './static/images/content/homepage-gallery-3.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-4.jpg',
+                imgWebp: './static/images/content/homepage-gallery-4.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-5.jpg',
+                imgWebp: './static/images/content/homepage-gallery-5.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-6.jpg',
+                imgWebp: './static/images/content/homepage-gallery-6.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+            {
+                img: './static/images/content/homepage-gallery-7.jpg',
+                imgWebp: './static/images/content/homepage-gallery-7.webp',
+            },
+            {
+                img: './static/images/content/homepage-gallery-8.jpg',
+                imgWebp: './static/images/content/homepage-gallery-8.webp',
+                video: 'https://www.youtube.com/watch?v=ZXsQAXx_ao0'
+            },
+        ]
+    section.section.album
+        .bg-img.bg-img--album--right
+        .bg-img.bg-img--album--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Фото и видео', './media.html')
+                +breadcrumbs-item('ВС "Надежды России" 28.09 - 06.10.2020')
+            .section__title ВС "Надежды России" 28.09 - 06.10.2020
+            ul.grid.grid--col--quarter
+                each obj in gallery
+                    li.grid__item
+                        article.card.card--border--rounded.card--border--wide.card--size--small
+                            if !obj.video
+                                a.card__link(href= obj.img data-fancybox="gallery")
+                                    figure.card__inner
+                                        picture.card__picture
+                                            source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                                            source(srcset= obj.img type='image/png').js-fallback-img
+                                            img.card__img(src= obj.img alt= obj.title loading="lazy")
+                                        figcaption.card__overlay
+                                            +icon('zoom-img')
+                            else
+                                a.card__link(href= obj.video data-fancybox="gallery")
+                                    figure.card__inner
+                                        picture.card__picture
+                                            source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                                            source(srcset= obj.img type='image/png').js-fallback-img
+                                            img.card__img(src= obj.img alt= obj.title loading="lazy")
+                                        figcaption.card__overlay.card__overlay--video
+                                            span
+                                                +icon('play')

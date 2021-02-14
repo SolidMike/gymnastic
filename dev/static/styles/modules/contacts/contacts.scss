@@ -1,0 +1,107 @@
+.contacts,
+.contacts__info,
+.contacts__item {
+    display: flex;
+}
+.contacts {
+
+    &__item {
+        align-items: baseline;
+
+        .contacts--view--header & {
+            + .contacts__item {
+                margin-left: calc(1rem + 1.5vw);
+                @include screen(800px) {
+                    margin-left: 0;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+
+        .contacts--view--footer & {
+            margin-top: 1rem;
+
+            &:first-child {
+                margin-top: unset;
+            }
+        }
+
+        .contacts--view--contact-us & {
+            flex-direction: column;
+            margin-top: calc(0.5rem + 1.3vw);
+
+            &:first-child {
+                margin-top: unset;
+            }
+        }
+    }
+
+    &__text {
+        color: inherit;
+        font-family: $bold;
+
+        .contacts--view--footer & {
+            @include screen(360px) {
+                font-size: rem(14px);
+            }
+        }
+
+        .contacts--view--contact-us & {
+            margin-top: 0.5rem;
+            font-size: rem(21px);
+        }
+
+        span {
+            font-size: rem(13px);
+            font-family: $regular;
+        }
+    }
+    &__icon {
+        color: $red;
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+
+    &__info {
+        .contacts--view--header & {
+            flex-grow: 2.5;
+            @include screen(800px) {
+                flex-direction: column;
+                font-size: rem(12px);
+            }
+        }
+
+        .contacts--view--footer & {
+            flex-direction: column;
+        }
+
+        .contacts--view--nav-mobile & {
+            flex-direction: column;
+            padding: 0.5rem;
+        }
+
+        .contacts--view--contact-us & {
+            flex-direction: column;
+        }
+    }
+
+    &__socials {
+        .contacts--view--header & {
+            flex-grow: 1;
+        }
+    }
+
+    &__subtitle {
+        color: $red;
+        font-family: $bold;
+    }
+
+    &__link:hover {
+        color: $red;
+    }
+
+    &--view--header {
+        justify-content: space-between;
+        align-items: center;
+    }
+}

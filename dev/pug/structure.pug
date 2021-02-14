@@ -1,0 +1,105 @@
+extends template/main
+
+block variables
+    - var title = 'Структура'
+    - var pageClass = 'structure-page'
+
+block content
+    -
+        const vicePres = [
+            {
+                name: 'Ирина <br> Винер-Усманова',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Алексей <br> Дмитриенко',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Владимир <br> Мухитдинов',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Ирина <br> Винер-Усманова',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Алексей <br> Дмитриенко',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Владимир <br> Мухитдинов',
+                position: 'Вице - президент',
+            },
+        ]
+        const members = [
+            {
+                name: 'Ирина <br> Винер-Усманова',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Алексей <br> Дмитриенко',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Владимир <br> Мухитдинов',
+                position: 'Вице - президент',
+            },
+        ]
+        const coaches = [
+            {
+                name: 'Ирина <br> Винер-Усманова',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Алексей <br> Дмитриенко',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Владимир <br> Мухитдинов',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Алексей <br> Дмитриенко',
+                position: 'Вице - президент',
+            },
+            {
+                name: 'Владимир <br> Мухитдинов',
+                position: 'Вице - президент',
+            },
+        ]
+    section.section.structure
+        .bg-img.bg-img--structure--right
+        .bg-img.bg-img--structure--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Судейские курсы')
+            .section__title Судейские курсы
+            section.section.section--gutter--small
+                .section__subtitle Вице-президенты
+                ul.grid
+                    each obj in vicePres
+                        li.grid__item
+                            article.card.card--border--rounded.card--has--logo
+                                .card__inner.card__inner--gutter--large
+                                    .card__title.card__title--has--underline!= obj.name
+                                    .card__position= obj.position
+            section.section.section--gutter--small
+                .section__subtitle Члены исполкома
+                ul.grid
+                    each obj in members
+                        li.grid__item
+                            article.card.card--border--rounded.card--has--logo
+                                .card__inner.card__inner--gutter--large
+                                    .card__title.card__title--has--underline!= obj.name
+                                    .card__position= obj.position
+            section.section.section--gutter--small
+                .section__subtitle Тренерский состав
+                ul.grid
+                    each obj in coaches
+                        li.grid__item
+                            article.card.card--border--rounded.card--has--logo
+                                .card__inner.card__inner--gutter--large
+                                    .card__title.card__title--has--underline!= obj.name
+                                    .card__position= obj.position

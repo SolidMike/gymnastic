@@ -1,0 +1,99 @@
+header.header
+    .header__body.container
+        figure.logo.header__logo.logo--view--header
+            a(href="/" class="logo__link")
+                picture.logo__img
+                    source(srcset='./static/images/general/logo.webp' type='image/webp').js-webp-img
+                    source(srcset='./static/images/general/logo.png' type='image/png')
+                    img(src='./static/images/general/logo.png' alt='Logo' loading="lazy")
+        .header__content
+            .header__contacts
+                .contacts.contacts--view--header
+                    ul.contacts__info
+                        li.contacts__item
+                            .contacts__icon
+                                +icon('marker')
+                            .contacts__text Донецк ул. Марьинская, д.1
+                        li.contacts__item
+                            .contacts__icon
+                                +icon('envelope')
+                            a.contacts__text.contacts__link(href="mailto:fhg-dnr@mail.ua") fhg-dnr@mail.ua
+                    .contacts__socials.socials
+                        ul.socials__list
+                            +socialLink('inst', 'https://www.instagram.com/')
+                            +socialLink('vk', 'https://vk.com/')
+                    .contacts__item.header__phone
+                        .contacts__icon
+                            +icon('phone')
+                        a.contacts__text.contacts__link(href="tel:0713330007") (071)-333-0007
+                    .sandwich.js-sandwich-toggle(data-target-id="site-overlay" data-target-class-toggle="is-active")
+                        .sandwich__line.sandwich__line--top
+                        .sandwich__line.sandwich__line--middle
+                        .sandwich__line.sandwich__line--bottom
+            .header__navigation
+                -
+                    var data = {
+                        "title": "Title text",
+                        "items": [{
+                            "title": "Главная",
+                            "link": '/'
+                        },
+                            {
+                                "title": "О федерации",
+                                "link": 'javascript:void();',
+                                "subnav": true,
+                                "items": [{
+                                    "title": "Президент",
+                                    "link": './content.html',
+                                    "subnav": true,
+                                    "items": [{
+                                        "title": "Президент",
+                                        "link": './content.html',
+
+                                    }],
+
+                                },
+                                    {
+                                        "title": "Структура",
+                                        "link": './structure.html'
+                                    },
+                                    {
+                                        "title": "Новости",
+                                        "link": './news.html'
+                                    },
+                                    {
+                                        "title": "Контакты",
+                                        "link": './contacts.html'
+                                    },
+                                ]
+                            },
+                            {
+                                "title": "Звезды",
+                                "link": "./stars.html",
+                            },
+                            {
+                                'title': 'Соревнования',
+                                'link': './ads.html',
+                            },
+                            {
+                                'title': 'Фото и видео',
+                                'link': './media.html',
+                                'subnav': true,
+                                'items': [{
+                                    'title': 'Альбом',
+                                    'link': './album.html'
+                                },
+                                ]
+                            },
+                            {
+                                'title': 'Коллегам',
+                                'link': './courses.html',
+                            },
+                            {
+                                'title': 'Школы',
+                                'link': './schools.html',
+                            }
+                        ]
+                    }
+                nav.menu
+                    +menu(data, 1)

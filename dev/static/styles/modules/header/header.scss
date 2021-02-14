@@ -1,0 +1,85 @@
+header {
+    flex: 0 0 auto;
+}
+.header {
+    @include webp-bg-image('../images/general/header-bg', 'jpg');
+    @include cover-background;
+    z-index: 20;
+
+    &--fixed {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-right: -50%;
+        width: 100%;
+    }
+
+    &__body {
+        display: flex;
+        color: $white;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+        justify-content: center;
+    }
+
+    &__contacts {
+        border-bottom: 1px solid #EAEAEA;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        transition: all 0.3s ease;
+
+        @include screen(970px) {
+            border-bottom: none;
+        }
+        @include screen(800px) {
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+        }
+    }
+
+    &__navigation {
+        padding-top: 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        transition: all 0.3s ease;
+
+        .header--fixed & {
+            padding-top: 0.5rem;
+        }
+
+        @include screen(970px) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        margin-right: 5rem;
+
+        .header--fixed & {
+            width: rem(90px);
+            height: 100%;
+            padding: 0.5rem;
+
+            @include screen(970px) {
+                top: 1rem;
+                width: rem(60px);
+            }
+            @include screen(800px) {
+                top: 2rem;
+            }
+            @include screen(360px) {
+                top: 3rem;
+            }
+        }
+
+        @include screen(1100px) {
+            margin-right: 1rem;
+        }
+    }
+}

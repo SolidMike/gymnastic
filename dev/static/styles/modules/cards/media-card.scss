@@ -1,0 +1,68 @@
+.media-card {
+    flex-direction: column;
+    max-width: rem(370px);
+
+    &__picture {
+        position: relative;
+        height: rem(240px);
+        overflow: hidden;
+
+        &::before {
+            @include cover-background;
+            content: '';
+            background-image: url("../images/general/card-wave.svg");
+            height: rem(37px);
+            width: 100%;
+            position: absolute;
+            bottom: -1px;
+            z-index: 10;
+        }
+
+        &:hover {
+            .media-card__img {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__img {
+        transition: .3s ease-in-out;
+    }
+
+    &__inner {
+        padding-left: rem(30px);
+        padding-right: rem(30px);
+        padding-bottom: calc(23px + 1vw);
+        flex: auto;
+
+        &--gutter--large {
+            padding-left: rem(48px);
+            padding-right: rem(48px);
+            padding-bottom: calc(23px + 1vw);
+        }
+    }
+
+    &__date {
+        font-size: rem(14px);
+    }
+
+    &__title {
+        margin-top: 1rem;
+    }
+
+    &__description {
+        margin-top: 1rem;
+    }
+
+    &__link {
+        font-family: $bold;
+        color: $red;
+        display: block;
+        margin-top: 1.5rem;
+
+        &:hover,
+        &:focus {
+            color: #ff0400;
+        }
+    }
+}

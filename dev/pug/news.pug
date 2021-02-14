@@ -1,0 +1,142 @@
+extends template/main
+
+block variables
+    - var title = 'Новости'
+    - var pageClass = 'news-page'
+
+block content
+    -
+        const news = [
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'Подведение итогов 2020 года',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Чемпионта переходное первенство ДНР',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'Федерация гимнастики чемпионат',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'Подведение итогов 2020 года',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Чемпионта переходное первенство ДНР',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'Федерация гимнастики чемпионат',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-1.jpg',
+                imgWebp: './static/images/content/homepage-news-1.webp',
+                date: '27.09.2020',
+                title: 'Подведение итогов 2020 года',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-2.jpg',
+                imgWebp: './static/images/content/homepage-news-2.webp',
+                date: '27.09.2020',
+                title: 'Чемпионта переходное первенство ДНР',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+            {
+                cardMod: 'card--border--rounded',
+                innerMod: '',
+                descrMod: '',
+                img: './static/images/content/homepage-news-3.jpg',
+                imgWebp: './static/images/content/homepage-news-3.webp',
+                date: '27.09.2020',
+                title: 'Федерация гимнастики чемпионат',
+                description: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке...',
+                link: './content.html',
+                linkLabel: 'Читать далее...',
+                content: ''
+            },
+        ]
+
+    section.section.news
+        .bg-img.bg-img--news--right-top
+        .bg-img.bg-img--news--right-bot
+        .bg-img.bg-img--news--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Новости')
+            .section__title Новости
+            ul.grid
+                each obj in news
+                    li.grid__item
+                        +mediaCard(obj)
+            include ./modules/pagination/pagination

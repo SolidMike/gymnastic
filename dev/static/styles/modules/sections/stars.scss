@@ -1,0 +1,98 @@
+.stars {
+
+    &__item {
+        margin-top: rem(100px);
+
+        @include screen(700px) {
+            margin-top: 2rem;
+        }
+
+        &:first-child {
+            margin-top: unset;
+        }
+    }
+
+    &__article {
+        display: flex;
+
+        @include screen(700px) {
+            flex-direction: column;
+        }
+
+        &--reverse {
+            flex-direction: row-reverse;
+
+            @include screen(700px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__card {
+        width: 35%;
+        margin: 0 auto 0 0;
+
+        @include screen(700px) {
+            height: rem(250px);
+            width: 100%;
+            margin: 0 auto;
+            max-width: initial;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+    }
+
+    &__inner {
+        width: 65%;
+        padding: 0.5rem 1.8rem;
+
+        @include screen(700px) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        padding-bottom: calc(0.5rem + 1.2vw);
+        font: rem(30px) $bold;
+    }
+
+    &__content {
+        line-height: 1.6;
+        margin-top: calc(0.5rem + 1.2vw);
+
+        @include screen(900px) {
+            position: relative;
+            max-height: rem(100px);
+            overflow: hidden;
+            transition: .5s;
+
+            &::after {
+                background-image : linear-gradient(to bottom, rgba(250, 250, 250, 0), #fff 90%);
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 50%;
+                left: 0;
+                width: 100%;
+            }
+
+            &.is-open {
+                max-height: 1000px;
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 1rem;
+
+        @include min-screen(901px) {
+            display: none;
+        }
+    }
+}

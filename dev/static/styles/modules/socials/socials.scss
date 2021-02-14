@@ -1,0 +1,61 @@
+.socials {
+
+    &--view--footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+
+        @include screen(1080px) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &--view--contact-us {
+        margin-top: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        color: $red;
+
+        .socials--view--footer & {
+            margin-top: 1rem;
+        }
+
+        .socials--view--contact-us & {
+            margin-top: 1rem;
+            color: $black;
+        }
+    }
+
+    &__title {
+        font-family: $bold;
+        @include screen(360px) {
+            font-size: rem(14px);
+        }
+
+        .socials--view--contact-us & {
+            color: $red;
+        }
+    }
+
+    &__item {
+        margin: 0 0.5rem;
+    }
+
+    &__link {
+        font-size: 1.1rem;
+        color: inherit;
+
+        &:hover {
+            color: #ff0400;
+        }
+
+        .icon-vk {
+            font-size: 1.5rem;
+        }
+    }
+
+}

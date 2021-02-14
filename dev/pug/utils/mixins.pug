@@ -1,0 +1,89 @@
+mixin icon(name,mod)
+    if(mod)
+        svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+            use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+    else
+        svg(class="svg-sprite-icon icon-" + name)
+            use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+mixin menu(data, depth)
+    - ++depth
+    ul(class= data.subnav ? 'dropdown__menu' : 'menu__list')
+        each item in data.items
+            li(class= depth > 2 ? 'dropdown__item' : 'menu__item' class= item.subnav ? 'dropdown' : '' class= item.menuSelected ? "is-active" : "")
+                a(class= depth > 2 ? 'dropdown__link' : 'menu__link' class= item.subnav ? 'dropdown__toggle js-menu-dropdown-toggle' : '' href = item.link)= item.title
+                if item.subnav
+                    +menu(item, depth)
+
+//- Button 1.1
+//- 1.1: Added disabled state
+mixin btn(options, attributes)
+    - var DEFAULT_OPTIONS = {};
+    - DEFAULT_OPTIONS.label = '' // string
+    - DEFAULT_OPTIONS.mod = '' // string
+    - DEFAULT_OPTIONS.href = false // string
+    - DEFAULT_OPTIONS.icon = false // object
+    - DEFAULT_OPTIONS.disabled = false // boolean
+    - DEFAULT_OPTIONS.type = 'button'  // string
+    - DEFAULT_OPTIONS.iconPosition = 'left' // can be {left, right}
+
+    //- Options that shouldn't be used
+    - DEFAULT_OPTIONS.variant = false // string
+
+    - options = Object.assign({}, DEFAULT_OPTIONS, options || {});
+
+    mixin btn-content
+        if options.icon && !options.iconPosition || options.icon && options.iconPosition == "left"
+            +icon(options.icon.name, options.icon.mod)
+            span.btn__label= options.label
+        if options.icon && options.iconPosition == "right"
+            span.btn__label= options.label
+            +icon(options.icon.name, options.icon.mod)
+        if !options.icon
+            span.btn__label= options.label
+        block
+
+    if options.variant
+        | Error: please use skin to denote button variants
+
+    if options.disabled && !options.href
+        button.btn( class= options.size ? "btn--" + options.mod : "" type= options.type disabled)&attributes(attributes)
+            +btn-content
+    else
+        if options.href
+            a.btn(class= `${options.mod ? "btn--" + options.mod : ""} ${options.disabled ? "btn--disabled" : ""}` href=options.href)&attributes(
+                attributes)
+                +btn-content
+        if !options.href
+            button.btn( class= options.mod ? "btn--" + options.mod : "" type= options.type)&attributes(attributes)
+                +btn-content
+
+mixin socialLink(icon,link)
+    li.socials__item
+        a(href=link).socials__link
+            +icon(icon, 'socials__icon')
+
+mixin mediaCard(obj)
+    article.card.media-card(class= obj.cardMod)
+        a.card__link(href= obj.link)
+            picture.card__picture.media-card__picture
+                source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                source(srcset= obj.img type='image/png').js-fallback-img
+                img.card__img.media-card__img(src= obj.img alt= obj.title loading="lazy")
+        .media-card__inner(class= obj.innerMod)
+            .media-card__date= obj.date
+            .media-card__title.card__title= obj.title
+            .media-card__description.text.text--responsive(class= obj.descrMod)= obj.description
+            a(href= obj.link).media-card__link= obj.linkLabel
+        if obj.content
+            .media-card__content= obj.content
+
+mixin breadcrumbs-item(text,href)
+    li.breadcrumbs__item
+        if(href)
+            a.breadcrumbs__link(href=href itemprop="item")
+                span(itemprop="name")=text
+            meta(itemprop="position" content="")
+        else
+            span(itemprop="name").breadcrumbs__text=text
+            meta(itemprop="position" content="")

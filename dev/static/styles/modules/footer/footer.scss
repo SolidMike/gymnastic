@@ -1,0 +1,49 @@
+footer {
+    flex: 0 0 auto;
+}
+
+.footer {
+    background-color: #F9F9F9;
+
+    &__body {
+        margin-top: calc(1rem + 1vw);
+        margin-bottom: calc(1rem + 1vw);
+        display: grid;
+        grid-template-areas: "logo nav contacts socials";
+        grid-template-columns: 23% 32% max-content auto;
+        grid-gap: rem(30px);
+
+        @include screen(1080px) {
+            grid-template-areas: "socials nav"
+                                 "contacts nav"
+                                 "contacts logo";
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include screen(600px) {
+            grid-template-areas: "socials nav"
+                                 "contacts nav"
+                                 "contacts nav";
+            grid-gap: 0.5rem;
+        }
+    }
+
+    &__logo {
+        grid-area: logo;
+        @include screen(600px) {
+            display: none;
+        }
+    }
+
+    &__navigation {
+        grid-area: nav;
+    }
+
+    &__contacts {
+        grid-area: contacts;
+    }
+
+    &__socials {
+        grid-area: socials;
+    }
+}

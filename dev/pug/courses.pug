@@ -1,0 +1,78 @@
+extends template/main
+
+block variables
+    - var title = 'Судейские курсы'
+    - var pageClass = 'courses-page'
+
+block content
+    -
+        const certificates = [
+            {
+                img: './static/images/content/cert-1.jpg',
+                imgWebp: './static/images/content/cert-1.webp',
+            },
+            {
+                img: './static/images/content/cert-2.jpg',
+                imgWebp: './static/images/content/cert-2.webp',
+            },
+            {
+                img: './static/images/content/cert-3.jpg',
+                imgWebp: './static/images/content/cert-3.webp',
+            },
+            {
+                img: './static/images/content/cert-4.jpg',
+                imgWebp: './static/images/content/cert-4.webp',
+            },
+            {
+                img: './static/images/content/cert-5.jpg',
+                imgWebp: './static/images/content/cert-5.webp',
+            },
+            {
+                img: './static/images/content/cert-6.jpg',
+                imgWebp: './static/images/content/cert-6.webp',
+            },
+            {
+                img: './static/images/content/cert-1.jpg',
+                imgWebp: './static/images/content/cert-1.webp',
+            },
+            {
+                img: './static/images/content/cert-2.jpg',
+                imgWebp: './static/images/content/cert-2.webp',
+            },
+            {
+                img: './static/images/content/cert-3.jpg',
+                imgWebp: './static/images/content/cert-3.webp',
+            },
+            {
+                img: './static/images/content/cert-4.jpg',
+                imgWebp: './static/images/content/cert-4.webp',
+            },
+            {
+                img: './static/images/content/cert-5.jpg',
+                imgWebp: './static/images/content/cert-5.webp',
+            },
+            {
+                img: './static/images/content/cert-6.jpg',
+                imgWebp: './static/images/content/cert-6.webp',
+            }
+        ]
+    section.section.courses
+        .bg-img.bg-img--courses--right
+        .bg-img.bg-img--courses--left
+        .container
+            ul.breadcrumbs(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+                +breadcrumbs-item('Главная','/')
+                +breadcrumbs-item('Судейские курсы')
+            .section__title Судейские курсы
+            ul.grid
+                each obj in certificates
+                    li.grid__item
+                        article.card.card--border--rounded.card--border--wide.card--size--large
+                            a.card__link(href= obj.img data-fancybox="gallery")
+                                figure.card__inner
+                                    picture.card__picture
+                                        source(srcset= obj.imgWebp type='image/webp').js-webp-img
+                                        source(srcset= obj.img type='image/png').js-fallback-img
+                                        img.card__img(src= obj.img alt= obj.title loading="lazy")
+                                    figcaption.card__overlay
+                                        +icon('zoom-img')

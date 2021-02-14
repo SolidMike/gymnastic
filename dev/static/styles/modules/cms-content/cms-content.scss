@@ -1,0 +1,37 @@
+.cms-content {
+    line-height: 1.6;
+    p {
+        @include fluid-type($min-vw, $max-vw, 14px, 16px);
+    }
+    ul, ol {
+        list-style-type: revert;
+        list-style-position: inside;
+    }
+    table {
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+    thead {
+        @include webp-bg-image('../images/general/header-bg', 'jpg');
+        @include cover-background;
+        color: $white;
+    }
+    tbody {
+        background: $white;
+    }
+    th {
+        padding: 2rem 2.5rem;
+    }
+    td {
+        padding: 1.2rem 2.5rem;
+    }
+    img {
+        border: 6px solid $white;
+        border-radius: 8px;
+    }
+    &__table {
+        box-shadow: 0 16px 72px rgba(0, 0, 0, 0.08);
+        overflow-x: auto;
+    }
+}

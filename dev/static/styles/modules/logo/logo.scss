@@ -1,0 +1,54 @@
+.logo {
+
+    &--view--header {
+        padding: 1.3rem;
+        transition: all 0.3s ease;
+        border: solid 1px $black;
+        border-radius: 50%;
+        background-color: #fff;
+        top: 1.5rem;
+        flex: none;
+
+        @include screen(970px) {
+            width: rem(60px);
+            height: 100%;
+            padding: 0.5rem;
+            top: 1rem;
+        }
+        @include screen(800px) {
+            top: 2rem;
+        }
+        @include screen(360px) {
+            top: 3rem;
+        }
+    }
+
+    &--view--footer {
+        display: flex;
+    }
+
+    &__img {
+        .logo--view--footer & {
+            flex: none;
+            width: rem(90px);
+            height: 100%;
+        }
+    }
+
+    &__text {
+        .logo--view--footer & {
+            margin-left: 1rem;
+            font-family: $bold;
+            padding-top: 0.8rem;
+        }
+    }
+
+    &__link {
+        display: inherit;
+
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+        }
+    }
+}

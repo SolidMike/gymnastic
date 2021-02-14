@@ -1,0 +1,17 @@
+.columns {
+    column-count: 3;
+    column-gap: 30px;
+
+    @include screen(1060px) {
+        column-count: 2;
+    }
+
+    @include screen(650px) {
+        column-count: 1;
+    }
+
+    &__item {
+        padding-bottom: 30px;
+        page-break-inside: avoid;
+    }
+}
